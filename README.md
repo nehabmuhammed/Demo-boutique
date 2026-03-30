@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# I Meraki Designer Boutique
 
-## Getting Started
+A luxury, high-end fashion boutique website built with **Next.js**, **Tailwind CSS**, and **GSAP ScrollTrigger**.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Advanced GSAP Animations**: 18 integrated animation systems including:
+  - Multi-layer Hero Parallax with cinematic content fade-out.
+  - Character-by-character Split Text reveals for headings.
+  - Smooth Clip-path wipes for paragraphs and imagery.
+  - Staggered 3D Tilt Card entrances for service sections.
+  - Dynamic Horizontal Bridal Showcase with pinned scroll and item reveals.
+- **Luxury Design Aesthetics**: 
+  - Exclusive **Black (#0b0b0b)** and **Gold (#d4af37)** color palette.
+  - Premium Typography: Playfair Display (Serif) & Poppins (Sans).
+  - Floating Gold Particles & Glow effects for an immersive experience.
+- **Mobile Optimized**: Responsive pinning and fallbacks for horizontal galleries on mobile devices.
+- **Accessibility**: Includes `prefers-reduced-motion` support.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+3. **Visit the boutique**:
+   Open [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **Animations**: GSAP (GreenSock Animation Platform) & Framer Motion
+- **Icons**: Lucide React
+- **Fonts**: Google Fonts (Playfair Display & Poppins)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👗 About the Boutique
 
-## Deploy on Vercel
+Located in **Pathanapuram, Kollam**, I Meraki Designer Boutique specializes in:
+- Bridal Blouse Designing & Embroidery
+- Designer Stitching (Saree Blouses, Gowns, Kurtis)
+- Custom Boutique Orders
+- Fabric Painting & Mural Work
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Created with Meraki, Worn with Elegance.*
