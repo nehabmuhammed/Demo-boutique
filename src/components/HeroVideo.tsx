@@ -80,7 +80,7 @@ const HeroVideo = ({
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 drop-shadow-md font-serif"
+          className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight text-white mb-4 sm:mb-6 drop-shadow-md px-2 sm:px-0"
         >
           {title}
         </motion.h1>
@@ -89,7 +89,7 @@ const HeroVideo = ({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="text-xl md:text-2xl text-neutral-300 max-w-3xl mb-12 drop-shadow-md font-light leading-relaxed"
+          className="text-base sm:text-xl md:text-2xl text-neutral-300 max-w-xs sm:max-w-xl md:max-w-3xl mb-8 sm:mb-12 drop-shadow-md font-light leading-relaxed px-2 sm:px-0"
         >
           {subtitle}
         </motion.p>
@@ -98,7 +98,7 @@ const HeroVideo = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center px-6 sm:px-0 w-full sm:w-auto"
         >
           <Link
             href={ctaLink}

@@ -13,6 +13,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Prevent horizontal overflow globally */
+    overflow-x: hidden;
   }
 
   body {
@@ -25,22 +27,28 @@
     z-index: 1;
   }
 
+  /* Fluid images — never overflow */
+  img, video, iframe {
+    max-width: 100%;
+  }
+
+  /* Prevent any element from busting the viewport */
+  * { box-sizing: border-box; }
+
   /* Hide scrollbar for horizontal scroll sections */
   [data-horizontal-inner] {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  [data-horizontal-inner]::-webkit-scrollbar {
-    display: none;
-  }
+  [data-horizontal-inner]::-webkit-scrollbar { display: none; }
 
-  /* Ensure smooth rendering */
-  * {
+  /* Antialiasing */
+  *, *::before, *::after {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Custom selection colors */
+  /* Gold selection */
   ::selection {
     background: rgba(212, 175, 55, 0.3);
     color: white;
@@ -373,6 +381,185 @@ nav {
     rgba(212, 175, 55, 0.5) 50%,
     transparent 100%
   );
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GALLERY — DESKTOP CAROUSEL
+   Tall portrait tiles in a horizontal snap-scroll strip.
+   Each tile is 280px wide × 480px tall on laptop/desktop.
+═══════════════════════════════════════════════════════════ */
+
+/* ── Track ── */
+.gallery-carousel-track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 2px 20px;   /* bottom pad for progress bar */
+  cursor: grab;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.gallery-carousel-track::-webkit-scrollbar { display: none; }
+.gallery-carousel-track:active             { cursor: grabbing; }
+
+/* ── Tile ── */
+.gallery-carousel-item {
+  flex: 0 0 260px;
+  height: 420px;
+  scroll-snap-align: start;
+  animation: carouselReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Larger tiles on big screens */
+@media (min-width: 1280px) {
+  .gallery-carousel-item {
+    flex: 0 0 290px;
+    height: 460px;
+  }
+}
+
+/* Wider tiles for categories with fewer images */
+/* First item is always the "hero" — slightly wider */
+.gallery-carousel-item:first-child {
+  flex: 0 0 320px;
+}
+@media (min-width: 1280px) {
+  .gallery-carousel-item:first-child {
+    flex: 0 0 360px;
+  }
+}
+
+/* ── Reveal animation ── */
+@keyframes carouselReveal {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* ── Hover lift ── */
+.gallery-carousel-item > div {
+  transition:
+    box-shadow 0.45s ease,
+    transform  0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.gallery-carousel-item:hover { z-index: 3; }
+.gallery-carousel-item:hover > div {
+  box-shadow:
+    0 0 50px rgba(212, 175, 55, 0.13),
+    0 24px 48px rgba(0, 0, 0, 0.55);
+  transform: translateY(-6px);
+}
+
+/* ── Arrow buttons ── */
+.gallery-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(11,11,11,0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: -10px; /* offset for progress bar bottom padding */
+}
+.gallery-carousel-arrow:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+  box-shadow: 0 0 16px rgba(212,175,55,0.2);
+}
+
+/* Position helpers (set via className in JSX) */
+.gallery-carousel-arrow.left-0  { left: 0; }
+.gallery-carousel-arrow.right-0 { right: 0; }
+
+/* ── Progress / scroll indicator ── */
+.gallery-carousel-progress-wrap {
+  position: relative;
+  height: 2px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 1px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+.gallery-carousel-progress-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(90deg, rgba(212,175,55,0.4), #d4af37);
+  border-radius: 1px;
+  transition: left 0.1s linear;
+}
+
+/* ── Image GPU smoothing ── */
+.gallery-carousel-item img {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GALLERY — MOBILE MASONRY (2 columns)
+═══════════════════════════════════════════════════════════ */
+.gallery-mobile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.gallery-mobile-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gallery-mobile-item {
+  width: 100%;
+  animation: mobileReveal 0.55s cubic-bezier(0.22,1,0.36,1) both;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Alternating heights for masonry look */
+.gallery-mobile-tall  { height: 260px; }
+.gallery-mobile-short { height: 180px; }
+
+@keyframes mobileReveal {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+.gallery-mobile-item > div {
+  transition: box-shadow 0.4s ease;
+}
+.gallery-mobile-item:hover > div {
+  box-shadow: 0 0 30px rgba(212,175,55,0.1), 0 12px 30px rgba(0,0,0,0.5);
+}
+.gallery-mobile-item img {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* ── No-scrollbar utility ── */
+.no-scrollbar                    { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ── Lightbox fade ── */
+@keyframes lbFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1);    }
 }
 
 /* ===== CUSTOM SCROLLBAR ===== */
