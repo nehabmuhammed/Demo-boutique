@@ -16,7 +16,7 @@ export default function Home() {
             HERO
         ══════════════════════════════════════ */}
         <HeroVideo
-          posterSrc="/images/hero_boutique.png"
+          posterSrc="/images/hero_bridal_red.jpg"
           title="I Meraki Designer Boutique"
           subtitle="Luxury designer stitching and bridal blouse designing in Pathanapuram."
           ctaText="Book Appointment"

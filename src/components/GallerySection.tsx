@@ -552,15 +552,15 @@ export default function GallerySection() {
             <div className="max-w-7xl mx-auto">
 
               {/* ── Two-column layout: info | grid ── */}
-              <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 xl:gap-12 items-start">
+              <div className="flex flex-col items-center lg:flex-row gap-6 sm:gap-8 xl:gap-12 lg:items-start">
 
                 {/* LEFT — Category info
                     On mobile: full width compact strip
                     On lg+: fixed-width sticky sidebar */}
-                <div className="w-full lg:w-68 xl:w-76 shrink-0 lg:sticky lg:top-24 space-y-4 sm:space-y-5">
+                <div className="w-full lg:w-68 xl:w-76 shrink-0 lg:sticky lg:top-24 space-y-4 sm:space-y-5 flex flex-col items-center text-center lg:block lg:text-left">
 
                   {/* Counter + title — horizontal on mobile */}
-                  <div className="flex items-start justify-between lg:block gap-4">
+                  <div className="flex flex-col items-center justify-center lg:block gap-4 w-full">
                     <div className="flex-1">
                       <span className="text-brand-accent text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.45em] block mb-2">
                         {currentCategory.number} / 04
@@ -573,7 +573,7 @@ export default function GallerySection() {
                       </h3>
                     </div>
                     {/* Nav arrows — shown inline on mobile next to title */}
-                    <div className="flex items-center gap-2 pt-1 lg:hidden shrink-0">
+                    <div className="flex items-center justify-center gap-2 pt-2 lg:hidden shrink-0">
                       <button onClick={() => { goPrev(); resetAutoPlay(); }}
                         className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:border-brand-accent hover:text-brand-accent transition-all duration-300"
                         aria-label="Previous" id="gallery-prev-btn-mobile"
@@ -585,7 +585,7 @@ export default function GallerySection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-center lg:justify-start gap-2">
                     <div className="w-6 h-px bg-brand-accent" />
                     <div className="w-2 h-px bg-brand-accent/30" />
                   </div>
@@ -604,7 +604,7 @@ export default function GallerySection() {
                     {currentCategory.description}
                   </p>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-center lg:justify-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-brand-accent" />
                     <span className="text-neutral-500 text-[9px] tracking-widest uppercase">
                       {currentCategory.images.length} pieces
@@ -637,7 +637,7 @@ export default function GallerySection() {
                   </div>
 
                   {/* Mobile dots only */}
-                  <div className="flex lg:hidden gap-1.5">
+                  <div className="flex justify-center lg:hidden gap-1.5">
                     {galleryCategories.map((_, i) => (
                       <button key={i}
                         onClick={() => { goToCategory(i); resetAutoPlay(); }}
@@ -652,7 +652,7 @@ export default function GallerySection() {
                 </div>
 
                 {/* RIGHT — Photos */}
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0 w-full">
                   {/* Desktop / Laptop: horizontal carousel */}
                   <div className="hidden md:block">
                     <GalleryCarousel
