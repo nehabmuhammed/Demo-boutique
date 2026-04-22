@@ -8,28 +8,28 @@ export default function ServicesPage() {
       title: "Signature Stitching",
       description: "Masterful precision for saree blouses, kurtis, and gowns that define grace. Our stitching is known for its flawless structural fit.",
       longDescription: "Our signature stitching process involves multiple measurements and structural analysis to ensure that every garment fits the client like a second skin. We specialize in complex cuts and modern silhouettes.",
-      image: "/images/gallery_bridal.png"
+      image: "/images/gallery/traditional_saree_pose.jpg"
     },
     {
       icon: <Sparkles size={36} />,
       title: "Bridal Couture",
       description: "Handcrafted bridal masterpieces detailed with embroidery and royal aesthetics for your special day.",
       longDescription: "We understand that your wedding day is a once-in-a-lifetime event. Our bridal couture services involve deep consultation to create an ensemble that reflects your personality and heritage.",
-      image: "/images/bridal_collection.png"
+      image: "/images/gallery/pink_bridal_portrait.jpg"
     },
     {
       icon: <Palette size={36} />,
       title: "Mural & Fabric Art",
       description: "Artistic hand-painting and mural work on fabric for a unique designer touch that stands out.",
       longDescription: "I Meraki is an innovator in fabric mural painting. Our artists hand-paint traditional and contemporary designs directly onto your chosen fabric, making every piece a unique masterpiece.",
-      image: "/images/fabric_painting.png"
+      image: "/images/fabric_art_lotus.jpg"
     },
     {
       icon: <Star size={36} />,
       title: "Bespoke Design",
       description: "Consultation-led custom designs for high-profile weddings and prestigious special events.",
       longDescription: "For those who seek the extraordinary, our bespoke design service offers a complete creative collaboration with our lead designers from concept to final fitting.",
-      image: "/images/bridal_detail.png"
+      image: "/images/gallery/bridal_window_light.jpg"
     }
   ];
 
@@ -37,7 +37,7 @@ export default function ServicesPage() {
     <div className="bg-black text-white min-h-screen">
       {/* Hero Section */}
       <HeroVideo
-        posterSrc="/images/gallery_outfit.png"
+        posterSrc="/images/gallery/wedding_couple.jpg"
         title="Our Couture Services"
         subtitle="Experience the art of bespoke fashion with our range of signature services."
         ctaText="Book Appointment"

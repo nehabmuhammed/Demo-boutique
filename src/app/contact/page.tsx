@@ -106,7 +106,7 @@ export default function ContactPage() {
               {/* Map Embed Container */}
               <div className="rounded-[2rem] overflow-hidden border border-white/5 grayscale hover:grayscale-0 transition-all duration-1000 h-[350px] relative">
                   <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.101740927827!2d76.8617!3d9.0984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05d1bb5b399225%3A0xe21d8b7ea75eac1e!2sPathanapuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1714480629738!5m2!1sen!2sin" 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7097072525244!2d76.8564375!3d9.090187499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b067336904a8711%3A0x60cdd71d5627c212!2sI%20Meraki%20designer%20boutique!5e0!3m2!1sen!2sin!4v1776762588366!5m2!1sen!2sin" 
                       width="100%" 
                       height="100%" 
                       style={{border:0}} 

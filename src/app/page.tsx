@@ -120,18 +120,14 @@ export default function Home() {
               <div className="relative" data-scroll-reveal>
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 max-w-lg mx-auto lg:mx-0" data-scroll-zoom>
                   <img
-                    src="/images/about_boutique.png"
-                    alt="The Studio"
-                    className="w-full h-full object-cover grayscale opacity-80"
+                    src="/images/founder_story.jpg"
+                    alt="The Founder"
+                    className="w-full h-full object-cover"
                   />
-                </div>
-                {/* Floating overlay image — desktop only */}
-                <div className="absolute -bottom-10 -right-6 w-1/2 aspect-square rounded-3xl overflow-hidden border-4 sm:border-8 border-brand-primary shadow-2xl hidden md:block">
-                  <img src="/images/hero_boutique.png" alt="Designer Work" className="w-full h-full object-cover" />
                 </div>
                 {/* Stat badge — desktop only */}
                 <div className="absolute top-8 -left-4 lg:-left-8 bg-neutral-900 border border-white/10 px-5 py-5 sm:px-8 sm:py-8 rounded-2xl shadow-2xl hidden sm:block">
-                  <div className="text-3xl sm:text-4xl font-serif text-brand-accent mb-1" data-counter="12">12+</div>
+                  <div className="text-3xl sm:text-4xl font-serif text-brand-accent mb-1" data-counter="8">8+</div>
                   <div className="text-[9px] sm:text-[10px] uppercase tracking-widest text-neutral-400">Years of Luxury Craft</div>
                 </div>
               </div>
@@ -311,7 +307,7 @@ export default function Home() {
                 >
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10 pointer-events-none" />
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d3935.101740927827!2d76.8617!3d9.0984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05d1bb5b399225%3A0xe21d8b7ea75eac1e!2sPathanapuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1714480629738!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7097072525244!2d76.8564375!3d9.090187499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b067336904a8711%3A0x60cdd71d5627c212!2sI%20Meraki%20designer%20boutique!5e0!3m2!1sen!2sin!4v1776762588366!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
